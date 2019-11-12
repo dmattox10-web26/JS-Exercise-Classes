@@ -110,10 +110,10 @@ class Car {
         + {name} and {location} of course come from the instance's own properties.
 */
 class Lambdasian {
-  constructor(student) {
-    this.name = student.name
-    this.age = student.age
-    this.location = student.location
+  constructor(person) {
+    this.name = person.name
+    this.age = person.age
+    this.location = person.location
   }
   speak() {
     return `Hello my name is ${this.name}, I am from ${this.location}`
@@ -134,8 +134,19 @@ class Lambdasian {
         + `demo` receives a `subject` string as an argument and returns the phrase 'Today we are learning about {subject}' where subject is the param passed in.
         + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
 */
-class Instructor {
-
+class Instructor extends Lambdasian {
+  constructor(person) {
+    super()
+    this.speciality = person.speciality
+    this.favLanguage = person.favLanguage
+    this.catchPhrase = person.catchPhrase
+  }
+  demo(subject) {
+    return `Today we are learning about ${subject}`
+  }
+  grade(student, subject) {
+    return `${student.name} receives a perfect score on ${subject}`
+  }
 }
 
 /*
@@ -153,8 +164,16 @@ class Instructor {
         + `PRAssignment` a method that receives a subject as an argument and returns `student.name has submitted a PR for {subject}`
         + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
 */
-class Student {
-
+class Student extends Lambdasian {
+  constructor(person) {
+    super()
+    this.previousBackground = person.previousBackground
+    this.className = person.className
+    this.favSubjects = person.favSubjects
+  }
+  listSubjects() {
+    return this.favSubjects.join(', ').toString() + '!'
+  }
 }
 
 /*
