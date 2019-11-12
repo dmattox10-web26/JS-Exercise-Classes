@@ -137,7 +137,7 @@ class Lambdasian {
 class Instructor extends Lambdasian {
   constructor(person) {
     super(person)
-    this.speciality = person.speciality
+    this.specialty = person.specialty
     this.favLanguage = person.favLanguage
     this.catchPhrase = person.catchPhrase
   }
@@ -204,7 +204,7 @@ class ProjectManager extends Instructor{
   standUp(channel) {
     return `${this.name} announces to ${channel}, @channel standy times!`
   }
-  degugsCode(student, subject) {
+  debugsCode(student, subject) {
     return `${this.name} debugs ${student.name}'s code on ${subject}`
   }
 }
